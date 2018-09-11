@@ -18,14 +18,29 @@ Update the file `/etc/wvdial.conf` so it looks the same as the files in this rep
 Add the following files at the following locations:
 
 * The file `2001:ab00`, in the `./usb_modeswitch.d/` directory, to `/etc/usb_modeswitch.d/`, with:
-    * `sudo cp ./usb_modeswitch.d/2001\:ab00 /etc/usb_modeswitch.d/`
+
+```
+$ sudo cp ./usb_modeswitch.d/2001\:ab00 /etc/usb_modeswitch.d/
+```
+
 * The file `modem_attachment.sh` to `/usr/sbin/` and make it executable with:
-    * `sudo cp modem_attachment.sh /usr/sbin/`
-    * `sudo chmod +x /usr/sbin/modem_attachment.sh`
+
+```
+$ sudo cp modem_attachment.sh /usr/sbin/
+$ sudo chmod +x /usr/sbin/modem_attachment.sh
+```
+
 * The file `modem-attachment.service` to `/etc/systemd/system/` with:
-    * `sudo cp modem-attachment.service /etc/systemd/system/`
+
+```
+$ sudo cp modem-attachment.service /etc/systemd/system/
+```
+
 * The file `lte-dwm222.rules` to `/etc/udev/rules.d/` with:
-    * `sudo cp lte-dwm222.rules /etc/udev/rules.d/`
+
+```
+$ sudo cp lte-dwm222.rules /etc/udev/rules.d/
+```
 
 Add the following lines to `/etc/network/interfaces`, so the connection is directly used:
 
@@ -48,7 +63,7 @@ $ sudo usb_modeswitch -v 0x2001 -p 0xab00 -M "5553424312345678000000000000001106
 Load serial drivers to communicate with AT interface:
 
 ```console
-$ sudo modprobe option; sudo echo "2001 7e35" > /sys/bus/usb-serial/drivers/option1/new_id
+$ sudo modprobe option; sudo sh -c "echo 2001 7e35 > /sys/bus/usb-serial/drivers/option1/new_id"
 ```
 
 Connect to the internet using `wvdial`:
