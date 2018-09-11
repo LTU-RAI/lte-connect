@@ -1,3 +1,3 @@
 ATTR{idVendor}=="2001", ATTR{idProduct}=="ab00", RUN+="usb_modeswitch '%b/%k'"
-ATTR{idVendor}=="2001", ATTR{idProduct}=="7e35", RUN+="modprobe option; echo 2001 7e35 > /sys/bus/usb-serial/drivers/option1/new_id"
+ATTR{idVendor}=="2001", ATTR{idProduct}=="7e35", TAG+="systemd", ENV{SYSTEMD_WANTS}="modem-attachment.service"
 SUBSYSTEM=="tty", ATTRS{idVendor}=="2001", ATTRS{idProduct}=="7e35", SYMLINK+="ttyLTE%E{ID_USB_INTERFACE_NUM}"

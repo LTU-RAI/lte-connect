@@ -1,0 +1,11 @@
+ttachment.service
+[Unit]
+Description = 4G Modem Connection
+
+[Service]
+Type=oneshot
+RemainAfterExit=no
+ExecStart=/usr/sbin/modem_attachment.sh
+
+[Install]
+WantedBy=multi-user.target
