@@ -6,7 +6,7 @@ TODO: Write a small intro here
 
 ## D-Link DWM-222 LTE Modem (fixed IP)
 
-### Prerequisites for automatic 4G connection
+### Make connection automatic on detection of LTE Modem
 
 Install `usb_modeswitch` and `wvdial`:
 
@@ -16,7 +16,8 @@ $ sudo apt install usb-modeswitch wvdial
 
 **Note:** If the installer gets stuck on wvdial, run: `sudo killall wvdialconf`
 
-Update the file `/etc/wvdial.conf` so it looks the same as the files in this repository. **NOTE:** Remember to set the correct pin of the SIM card, or disable the PIN on the SIM card and remove the PIN line from the config.
+Update the file `/etc/wvdial.conf` so it looks the same as the files in this repository.
+**NOTE:** Remember to set the correct pin of the SIM card, or disable the PIN on the SIM card and remove the PIN line from the config. It is recommended to remove the SIM pin as this removed the bound of which 4G modem to use on the drone.
 
 Add the following files at the following locations:
 
@@ -77,4 +78,3 @@ $ sudo wvdial &
 
 You should now have a working 4G LTE connection!
 
-### Make connection automatic on detection of LTE Modem
