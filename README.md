@@ -16,7 +16,8 @@ $ sudo apt install usb-modeswitch wvdial
 
 **Note:** If the installer gets stuck on wvdial, run: `sudo killall wvdialconf`
 
-Update the file `/etc/wvdial.conf` so it looks the same as the files in this repository.
+Update the file `/etc/wvdial.conf` so it looks the same as the files in this repository. **NOTE:** Remember to set the correct pin of the SIM card, or disable the PIN on the SIM card and remove the PIN line from the config.
+
 Add the following files at the following locations:
 
 * The file `2001:ab00`, in the `./usb_modeswitch.d/` directory, to `/etc/usb_modeswitch.d/`, with:
