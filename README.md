@@ -11,8 +11,10 @@ TODO: Write a small intro here
 Install `usb_modeswitch` and `wvdial`:
 
 ```console
-$ sudo apt install usb_modeswitch wvdial
+$ sudo apt install usb-modeswitch wvdial
 ```
+
+**Note:** If the installer gets stuck on wvdial, run: `sudo killall wvdialconf`
 
 Update the file `/etc/wvdial.conf` so it looks the same as the files in this repository.
 Add the following files at the following locations:
